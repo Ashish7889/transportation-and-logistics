@@ -1,0 +1,188 @@
+/* Vehicle Animations */
+@keyframes drive-in {
+  from {
+    transform: translateX(-100%) rotateY(90deg);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0) rotateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes drive-out {
+  from {
+    transform: translateX(0) rotateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%) rotateY(90deg);
+    opacity: 0;
+  }
+}
+
+@keyframes truck-drive {
+  0% {
+    transform: translateX(-100%) scale(0.8);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%) scale(0.8);
+    opacity: 0;
+  }
+}
+
+/* Animation Container */
+.auth-animation-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.auth-animation-container.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Vehicle SVG Elements */
+.vehicle-svg {
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+  opacity: 0;
+  transform: translateX(-100%) rotateY(90deg);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.vehicle-svg.active {
+  opacity: 1;
+  transform: translateX(0) rotateY(0);
+}
+
+.vehicle-svg.out {
+  opacity: 0;
+  transform: translateX(100%) rotateY(90deg);
+}
+
+/* Vehicle SVG Styles */
+.vehicle-svg path {
+  fill: #333;
+  transition: fill 0.3s ease;
+}
+
+.vehicle-svg:hover path {
+  fill: #007AFF;
+}
+
+/* Animation Container */
+.auth-animation-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+  z-index: 100;
+}
+
+.auth-animation-container.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Animation Controls */
+.auth-animation-controls {
+  display: none;
+  position: absolute;
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+}
+
+.auth-animation-controls.active {
+  display: flex;
+  gap: 10px;
+}
+
+.animation-control-btn {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 122, 255, 0.2);
+}
+
+.animation-control-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 122, 255, 0.3);
+  background: #0056b3;
+}
+
+/* Truck Animation */
+.auth-truck {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  opacity: 0;
+  transform: translateX(-100%) scale(0.8);
+}
+
+.auth-truck.active {
+  opacity: 1;
+  animation: truck-drive 1.5s ease infinite;
+}
+
+/* Animation Controls */
+.auth-animation-controls {
+  display: none;
+  position: absolute;
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+.auth-animation-controls.active {
+  display: flex;
+  gap: 10px;
+}
+
+.animation-control-btn {
+  background: none;
+  border: none;
+  color: #666;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 8px 16px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.animation-control-btn:hover {
+  background: rgba(255, 255, 255, 1);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}

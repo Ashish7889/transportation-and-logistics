@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Driver Dashboard | MyTransport</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <!-- Google Font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" />
+</head>
+<body>
+  <!-- Fixed Header -->
+  <header>
+    <div class="logo">MyTransport</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="bookings.html">Bookings</a></li>
+        <li><a href="driver.html">Dashboard</a></li>
+        <li><a href="login.html">Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Driver Dashboard Section -->
+  <section class="profile">
+    <div class="container">
+      <h2>Driver Dashboard</h2>
+
+      <!-- Driver Details -->
+      <div class="profile-info">
+        <img src="images/your-image-1.jpg" alt="Driver Photo" class="profile-pic" />
+        <div>
+          <p><strong>Name:</strong> John Doe</p>
+          <p><strong>Vehicle:</strong> Toyota Prius</p>
+          <p><strong>License Plate:</strong> ABC-1234</p>
+        </div>
+      </div>
+
+      <!-- Analytics Section -->
+      <div class="ride-stats">
+        <h3>Ride Analytics</h3>
+        <canvas id="rideChart" width="400" height="200"></canvas>
+      </div>
+
+      <!-- Orders Section (New) -->
+      <div class="orders">
+        <h3>Ride Orders</h3>
+        <div id="ordersList">
+          <!-- Orders will be loaded here by driver.js -->
+        </div>
+      </div>
+
+      <!-- Ratings & Reviews Section -->
+      <div class="reviews">
+        <h3>Ratings & Reviews</h3>
+        <div id="reviewsList">
+          <!-- Reviews will be loaded dynamically -->
+        </div>
+        <form id="reviewForm">
+          <h4>Submit a Review</h4>
+          <input type="number" id="rating" placeholder="Rating (1-5)" min="1" max="5" required />
+          <textarea id="reviewText" placeholder="Write your review here" required></textarea>
+          <button type="submit" class="btn">Submit Review</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 MyTransport. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="js/dashboard.js"></script>
+  <script src="js/rating.js"></script>
+  <script src="js/driver.js"></script> <!-- New script to load orders -->
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Payment | MyTransport</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  
+  
+  <header>
+    <div class="logo">MyTransport</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <section class="payment">
+    <div class="container">
+      <h2>Payment Simulation</h2>
+      <p>Estimated Fare: <span id="finalFare">0.00</span></p>
+      <!-- Added onsubmit attribute and proper IDs -->
+      <form id="paymentForm" onsubmit="return validatePayment();">
+        <input type="text" id="card-number" placeholder="Card Number" required>
+        <input type="text" id="name" placeholder="Card Holder Name" required>
+        <input type="text" id="expiryDate" placeholder="Expiry Date (MM/YY)" required>
+        <input type="text" id="cvv" placeholder="CVV" required>
+        <!-- Error message container -->
+        <p id="paymentError" style="color: red;"></p>
+        <button type="submit" class="btn">Pay Now</button>
+      </form>
+    </div>
+  </section>
+  
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 MyTransport. All Rights Reserved.</p>
+    </div>
+  </footer>
+  
+  <script src="js/payment.js"></script>
+  
+  </script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Logistics Orders | MyTransport</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap">
+</head>
+<body>
+  <header>
+    <div class="logo">MyTransport</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="logistics.html">Logistics Orders</a></li>
+        <li><a href="login.html">Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="logistics">
+    <div class="container">
+      <h2>Place a Logistics Order</h2>
+      <div id="progressIndicator">
+        <span class="step-indicator active">1</span>
+        <span class="step-indicator">2</span>
+        <span class="step-indicator">3</span>
+      </div>
+
+      <form id="logisticsForm">
+        <!-- Step 1 -->
+        <fieldset class="step active">
+          <legend>Order Details</legend>
+          <select id="pickupSelect" required>
+            <option value="">Select Pickup District</option>
+          </select>
+          <select id="dropSelect" required>
+            <option value="">Select Drop District</option>
+          </select>
+          <input type="date" id="orderDate" required />
+          <input type="number" id="distanceInput" placeholder="Distance (km)" readonly required />
+          <button type="button" class="btn nextBtn">Next</button>
+        </fieldset>
+
+        <!-- Step 2 -->
+        <fieldset class="step">
+  <legend>Package & Vehicle</legend>
+
+  <input type="text" id="packageDetails" placeholder="Package Details (weight, dimensions)" required />
+  <input type="number" id="packageWeight" placeholder="Package Weight (kg)" required />
+
+  <div class="vehicle-selection">
+    <input type="radio" id="vehicle-bike" name="vehicleType" value="bike" required />
+    <label for="vehicle-bike" class="vehicle-label">
+      <img src="images/bike.jpg" alt="Bike" />
+      <span>Bike</span>
+    </label>
+
+    <input type="radio" id="vehicle-van" name="vehicleType" value="van" />
+    <label for="vehicle-van" class="vehicle-label">
+      <img src="images/van.jpg" alt="Van" />
+      <span>Van</span>
+    </label>
+
+    <input type="radio" id="vehicle-truck" name="vehicleType" value="truck" />
+    <label for="vehicle-truck" class="vehicle-label">
+      <img src="images/truck.jpg" alt="Truck" />
+      <span>Truck</span>
+    </label>
+  </div>
+
+  <button type="button" class="btn prevBtn">Previous</button>
+  <button type="button" class="btn nextBtn">Next</button>
+</fieldset>
+
+        <!-- Step 3 -->
+        <fieldset class="step">
+          <legend>Summary & Price</legend>
+          <div id="orderSummary"></div>
+          <p id="priceDisplay">Calculated Price: ₹0.00</p>
+          <div id="orderNotification"></div>
+          <button type="submit" class="btn">Place Order</button>
+          <button type="button" class="btn prevBtn">Previous</button>
+        </fieldset>
+      </form>
+
+      <div id="logisticsOrders"><h3>Your Logistics Orders</h3></div>
+
+      <div id="logisticsReviews">
+        <h3>Service Reviews</h3>
+        <div id="reviewsList"></div>
+        <form id="logisticsReviewForm">
+          <input type="number" id="logRating" placeholder="Rating (1-5)" min="1" max="5" required />
+          <textarea id="logReviewText" placeholder="Write your review" required></textarea>
+          <button type="submit" class="btn">Submit Review</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 MyTransport. All Rights Reserved.</p>
+    </div>
+   
+  </footer>
+
+  <script src="js/logistics.js" defer></script>
+</body>
+</html>
